@@ -6,7 +6,7 @@
 
 deligence:panoplycore
 deligence:default-template
-# thekavish:panoply-calc
+thekavish:panoply-calc
 
 meteor-base                # Packages every Meteor app needs to have
 mobile-experience          # Packages for a great mobile UX

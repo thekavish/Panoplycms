@@ -1,17 +1,12 @@
 FrontHeader = React.createClass({
 	mixins: [ReactMeteorData],
 	getMeteorData() {
-		var isReady = Meteor.subscribe('modules').ready();
+		var isReady = Meteor.subscribe('findMenuOnNavBar','nav-bar-menu').ready();
 		// console.log('modules is',isReady , 'ready')
-		if (isReady) {
-			var theMenuId = Modules.findOne({$and: [{"modDesc.type" : "MenuModule"}, {trash:false}, {"status" : "true"}, {position:"nav-bar-menu"}]}).modDesc.value.menuId;
-			return {
-				navMenuitems : MenuItems.find({"mainParentId" : theMenuId}).fetch()
-			};
-		} else {
-			return {
-				navMenuitems : []
-			};
+		console.log(Meteor.subscribe('findMenuOnNavBar','nav-bar-menu').ready())
+		var theMenuId = Modules.findOne({$and: [{"modDesc.type" : "MenuModule"}, {trash:false}, {"status" : "true"}, {position:"nav-bar-menu"}]}).modDesc.value.menuId;
+		return {
+			navMenuitems : MenuItems.find({"mainParentId" : theMenuId}).fetch()
 		}
 	},
 	renderNavMenu() {
@@ -38,7 +33,7 @@ NavMenu = React.createClass({
 		item: React.PropTypes.object.isRequired
 	},
 	render(){
-		// console.log(this.props.item._id);
+		console.log(this.props.item._id);
 		return(
 			<a className="nav-link" href={this.props.item.alias}>{this.props.item.title}</a>
 		);
