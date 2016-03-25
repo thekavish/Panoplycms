@@ -36,7 +36,6 @@ ModulesLayout = React.createClass({
             <li><a role="menuitem" tabIndex="-1" href={FlowRouter.path( "AddModules",{ 'type': 'Banners'})}>Banner</a></li>
 	        </ul>
 		    </div>
-		    <a href={FlowRouter.path( "AddModules")} className="btn btn-success">{i18n('ADMIN_EXTENSION_MODULES_ADDHTMLBLOCKS')}</a>
 		    <table className="table table-striped">
 	        <thead>
             <tr>
