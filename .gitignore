@@ -47,3 +47,5 @@ Temporary Items
 *.rar
 
 packages/panoply-calc/.travis.yml
+.idea/
+.meteor/
